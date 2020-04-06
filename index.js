@@ -3,7 +3,7 @@
  */
 
 import {AppRegistry} from 'react-native';
-import App from './AnimatedParallel';
+import App from './AnimatedSequence';
 import {name as appName} from './app.json';
 
 AppRegistry.registerComponent(appName, () => App);
