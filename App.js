@@ -2,14 +2,12 @@ import * as React from 'react';
 import {Button, View, StyleSheet} from 'react-native';
 import {createDrawerNavigator} from '@react-navigation/drawer';
 import {NavigationContainer} from '@react-navigation/native';
+import AnimatedInput from './AnimatedInput';
 
-function HomeScreen({navigation}) {
+function AnimatedInputScreen({navigation}) {
   return (
-    <View style={styles.homeView}>
-      <Button
-        onPress={() => navigation.navigate('Notifications')}
-        title="Go to notifications"
-      />
+    <View style={styles.screenView}>
+      <AnimatedInput />
     </View>
   );
 }
@@ -27,7 +25,7 @@ const App: () => React$Node = () => {
   return (
     <NavigationContainer>
       <Drawer.Navigator initialRouteName="Home">
-        <Drawer.Screen name="Home" component={HomeScreen} />
+        <Drawer.Screen name="Animated Input" component={AnimatedInputScreen} />
         <Drawer.Screen name="Notifications" component={NotificationsScreen} />
       </Drawer.Navigator>
     </NavigationContainer>
@@ -35,12 +33,7 @@ const App: () => React$Node = () => {
 };
 
 const styles = StyleSheet.create({
-  homeView: {
-    flex: 1,
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-  notificationView: {
+  screenView: {
     flex: 1,
     alignItems: 'center',
     justifyContent: 'center',

@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import {StyleSheet, View, Animated, Button, TextInput} from 'react-native';
 
-export default class RNAnimations extends Component {
+export default class AnimatedInput extends Component {
   animatedWidth = new Animated.Value(200);
   animate = (value) => {
     Animated.timing(this.animatedWidth, {
