@@ -6,6 +6,7 @@ import AnimatedInput from './AnimatedInput';
 import AnimatedLoop from './AnimatedLoop';
 import AnimatedParallel from './AnimatedParallel';
 import AnimatedSequence from './AnimatedSequence';
+import AnimatedTiming from './AnimatedTiming';
 
 // dynamic component???
 const getScreen = (ScreenComponent) => {
@@ -40,6 +41,10 @@ const App: () => React$Node = () => {
         <Drawer.Screen
           name="Animated Sequence"
           component={getScreen(AnimatedSequence)}
+        />
+        <Drawer.Screen
+          name="Animated Timing"
+          component={getScreen(AnimatedTiming)}
         />
       </Drawer.Navigator>
     </NavigationContainer>

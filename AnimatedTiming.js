@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import {StyleSheet, View, Animated, Button} from 'react-native';
 
-export default class RNAnimations extends Component {
+export default class AnimatedTiming extends Component {
   marginTop = new Animated.Value(20);
   animate = () => {
     Animated.timing(this.marginTop, {
