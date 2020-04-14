@@ -4,6 +4,7 @@ import {createDrawerNavigator} from '@react-navigation/drawer';
 import {NavigationContainer} from '@react-navigation/native';
 import AnimatedInput from './AnimatedInput';
 import AnimatedLoop from './AnimatedLoop';
+import AnimatedParallel from './AnimatedParallel';
 
 // dynamic component???
 const getScreen = (ScreenComponent) => {
@@ -18,17 +19,23 @@ const getScreen = (ScreenComponent) => {
   return screen;
 };
 
-const AnimatedInputScreen = getScreen(AnimatedInput);
-
-const AnimatedLoopScreen = getScreen(AnimatedLoop);
-
 const Drawer = createDrawerNavigator();
 const App: () => React$Node = () => {
   return (
     <NavigationContainer>
       <Drawer.Navigator initialRouteName="Home">
-        <Drawer.Screen name="Animated Input" component={AnimatedInputScreen} />
-        <Drawer.Screen name="Animated Loop" component={AnimatedLoopScreen} />
+        <Drawer.Screen
+          name="Animated Input"
+          component={getScreen(AnimatedInput)}
+        />
+        <Drawer.Screen
+          name="Animated Loop"
+          component={getScreen(AnimatedLoop)}
+        />
+        <Drawer.Screen
+          name="Animated Parallel"
+          component={getScreen(AnimatedParallel)}
+        />
       </Drawer.Navigator>
     </NavigationContainer>
   );

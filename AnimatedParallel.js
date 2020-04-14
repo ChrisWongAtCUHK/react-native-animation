@@ -7,7 +7,7 @@ import {
   TouchableHighlight,
 } from 'react-native';
 
-export default class RNAnimations extends Component {
+export default class AnimatedParallel extends Component {
   animatedTitle = new Animated.Value(-200);
   animatedSubtitle = new Animated.Value(600);
   animatedButton = new Animated.Value(900);
