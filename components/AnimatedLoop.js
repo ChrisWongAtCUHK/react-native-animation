@@ -35,7 +35,7 @@ export default class AnimatedLoop extends Component {
       <View style={styles.container}>
         {loading ? (
           <Animated.Image
-            source={require('./spinner.png')}
+            source={require('../assets/spinner.png')}
             style={spinnerStyle}
           />
         ) : (

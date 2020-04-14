@@ -2,11 +2,11 @@ import * as React from 'react';
 import {View, StyleSheet} from 'react-native';
 import {createDrawerNavigator} from '@react-navigation/drawer';
 import {NavigationContainer} from '@react-navigation/native';
-import AnimatedInput from './AnimatedInput';
-import AnimatedLoop from './AnimatedLoop';
-import AnimatedParallel from './AnimatedParallel';
-import AnimatedSequence from './AnimatedSequence';
-import AnimatedTiming from './AnimatedTiming';
+import AnimatedInput from './components/AnimatedInput';
+import AnimatedLoop from './components/AnimatedLoop';
+import AnimatedParallel from './components/AnimatedParallel';
+import AnimatedSequence from './components/AnimatedSequence';
+import AnimatedTiming from './components/AnimatedTiming';
 
 // dynamic component???
 const getScreen = (ScreenComponent) => {
@@ -27,6 +27,10 @@ const App: () => React$Node = () => {
     <NavigationContainer>
       <Drawer.Navigator initialRouteName="Home">
         <Drawer.Screen
+          name="Animated Timing"
+          component={getScreen(AnimatedTiming)}
+        />
+        <Drawer.Screen
           name="Animated Input"
           component={getScreen(AnimatedInput)}
         />
@@ -41,10 +45,6 @@ const App: () => React$Node = () => {
         <Drawer.Screen
           name="Animated Sequence"
           component={getScreen(AnimatedSequence)}
-        />
-        <Drawer.Screen
-          name="Animated Timing"
-          component={getScreen(AnimatedTiming)}
         />
       </Drawer.Navigator>
     </NavigationContainer>
