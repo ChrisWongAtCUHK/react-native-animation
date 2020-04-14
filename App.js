@@ -5,21 +5,22 @@ import {NavigationContainer} from '@react-navigation/native';
 import AnimatedInput from './AnimatedInput';
 import AnimatedLoop from './AnimatedLoop';
 
-function AnimatedInputScreen({navigation}) {
-  return (
-    <View style={styles.screenView}>
-      <AnimatedInput />
-    </View>
-  );
-}
+// dynamic component???
+const getScreen = (ScreenComponent) => {
+  const screen = ({navigation}) => {
+    return (
+      <View style={styles.screenView}>
+        <ScreenComponent />
+      </View>
+    );
+  };
 
-function AnimatedLoopScreen({navigation}) {
-  return (
-    <View style={styles.screenView}>
-      <AnimatedLoop />
-    </View>
-  );
-}
+  return screen;
+};
+
+const AnimatedInputScreen = getScreen(AnimatedInput);
+
+const AnimatedLoopScreen = getScreen(AnimatedLoop);
 
 const Drawer = createDrawerNavigator();
 const App: () => React$Node = () => {
