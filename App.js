@@ -5,6 +5,7 @@ import {NavigationContainer} from '@react-navigation/native';
 import AnimatedInput from './AnimatedInput';
 import AnimatedLoop from './AnimatedLoop';
 import AnimatedParallel from './AnimatedParallel';
+import AnimatedSequence from './AnimatedSequence';
 
 // dynamic component???
 const getScreen = (ScreenComponent) => {
@@ -35,6 +36,10 @@ const App: () => React$Node = () => {
         <Drawer.Screen
           name="Animated Parallel"
           component={getScreen(AnimatedParallel)}
+        />
+        <Drawer.Screen
+          name="Animated Sequence"
+          component={getScreen(AnimatedSequence)}
         />
       </Drawer.Navigator>
     </NavigationContainer>

@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import {StyleSheet, View, Animated} from 'react-native';
 
-export default class RNAnimations extends Component {
+export default class AnimatedSequence extends Component {
   componentDidMount() {
     this.animate();
   }
