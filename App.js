@@ -1,8 +1,9 @@
 import * as React from 'react';
-import {Button, View, StyleSheet} from 'react-native';
+import {View, StyleSheet} from 'react-native';
 import {createDrawerNavigator} from '@react-navigation/drawer';
 import {NavigationContainer} from '@react-navigation/native';
 import AnimatedInput from './AnimatedInput';
+import AnimatedLoop from './AnimatedLoop';
 
 function AnimatedInputScreen({navigation}) {
   return (
@@ -12,10 +13,10 @@ function AnimatedInputScreen({navigation}) {
   );
 }
 
-function NotificationsScreen({navigation}) {
+function AnimatedLoopScreen({navigation}) {
   return (
-    <View style={styles.notificationView}>
-      <Button onPress={() => navigation.goBack()} title="Go back home" />
+    <View style={styles.screenView}>
+      <AnimatedLoop />
     </View>
   );
 }
@@ -26,7 +27,7 @@ const App: () => React$Node = () => {
     <NavigationContainer>
       <Drawer.Navigator initialRouteName="Home">
         <Drawer.Screen name="Animated Input" component={AnimatedInputScreen} />
-        <Drawer.Screen name="Notifications" component={NotificationsScreen} />
+        <Drawer.Screen name="Animated Loop" component={AnimatedLoopScreen} />
       </Drawer.Navigator>
     </NavigationContainer>
   );

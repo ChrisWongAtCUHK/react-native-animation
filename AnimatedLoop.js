@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import {Easing, StyleSheet, View, Animated, Text} from 'react-native';
 
-export default class RNAnimations extends Component {
+export default class AnimatedLoop extends Component {
   state = {
     loading: true,
   };
@@ -53,12 +53,5 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     padding: 10,
     paddingTop: 50,
-  },
-  input: {
-    height: 50,
-    marginHorizontal: 15,
-    backgroundColor: '#ededed',
-    marginTop: 10,
-    paddingHorizontal: 9,
   },
 });
