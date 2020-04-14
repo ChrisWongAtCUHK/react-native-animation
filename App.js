@@ -1,12 +1,11 @@
-import * as React from 'react';
-import {View, StyleSheet} from 'react-native';
-import {createDrawerNavigator} from '@react-navigation/drawer';
-import {NavigationContainer} from '@react-navigation/native';
+import React from 'react';
+import {StyleSheet, View} from 'react-native';
+import {DrawerNavigator} from 'react-navigation';
+import AnimatedTiming from './components/AnimatedTiming';
 import AnimatedInput from './components/AnimatedInput';
 import AnimatedLoop from './components/AnimatedLoop';
 import AnimatedParallel from './components/AnimatedParallel';
 import AnimatedSequence from './components/AnimatedSequence';
-import AnimatedTiming from './components/AnimatedTiming';
 
 // dynamic component???
 const getScreen = (ScreenComponent) => {
@@ -21,35 +20,13 @@ const getScreen = (ScreenComponent) => {
   return screen;
 };
 
-const Drawer = createDrawerNavigator();
-const App: () => React$Node = () => {
-  return (
-    <NavigationContainer>
-      <Drawer.Navigator initialRouteName="Home">
-        <Drawer.Screen
-          name="Animated Timing"
-          component={getScreen(AnimatedTiming)}
-        />
-        <Drawer.Screen
-          name="Animated Input"
-          component={getScreen(AnimatedInput)}
-        />
-        <Drawer.Screen
-          name="Animated Loop"
-          component={getScreen(AnimatedLoop)}
-        />
-        <Drawer.Screen
-          name="Animated Parallel"
-          component={getScreen(AnimatedParallel)}
-        />
-        <Drawer.Screen
-          name="Animated Sequence"
-          component={getScreen(AnimatedSequence)}
-        />
-      </Drawer.Navigator>
-    </NavigationContainer>
-  );
-};
+const App = new DrawerNavigator({
+  'Animated Timing': getScreen(AnimatedTiming),
+  'Animated Input': getScreen(AnimatedInput),
+  'Animated Loop': getScreen(AnimatedLoop),
+  'Animated Parallel': getScreen(AnimatedParallel),
+  'Animated Sequence': getScreen(AnimatedSequence),
+});
 
 const styles = StyleSheet.create({
   screenView: {

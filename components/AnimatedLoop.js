@@ -35,7 +35,10 @@ export default class AnimatedLoop extends Component {
       <View style={styles.container}>
         {loading ? (
           <Animated.Image
-            source={require('../assets/spinner.png')}
+            source={{
+              uri:
+                'https://filacoahuila.com/wp-content/uploads/2020/01/Computer-Icons-Font-Awesome-Spinner-loading-die-for.jpg',
+            }}
             style={spinnerStyle}
           />
         ) : (

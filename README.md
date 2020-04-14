@@ -1,9 +1,7 @@
 # README
 
-## How to run
-```
-react-native run-ios
-```
+## Snacks
+https://snack.expo.io/@chriswongatcuhk/72841a
 
 ## References
  * [How do I use this in my app?](https://reactnative.dev/blog/2017/02/14/using-native-driver-for-animated#how-do-i-use-this-in-my-app)
